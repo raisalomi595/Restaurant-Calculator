@@ -1,0 +1,24 @@
+/* Make buttons change when hovered */
+.menu-item button:hover {
+    opacity: 0.8;
+}
+
+/* Make buttons change when clicked */
+.menu-item button:active {
+    transform: scale(0.95);
+}
+
+/* Style the quantity display more prominently */
+.menu-item .quantity-display {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 15px;
+}
+
+/* Style the item total */
+.menu-item .item-total {
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 18px;
+}
