@@ -1,24 +1,150 @@
-/* Make buttons change when hovered */
-.menu-item button:hover {
-    opacity: 0.8;
+/* ============================================
+   Customer Information Styling
+   ============================================ */
+
+#customer-info {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Make buttons change when clicked */
-.menu-item button:active {
+#customer-info h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* ============================================
+   Place Order Button Styling
+   ============================================ */
+
+#order-actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#place-order-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#place-order-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+#place-order-btn:active {
     transform: scale(0.95);
 }
 
-/* Style the quantity display more prominently */
-.menu-item .quantity-display {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    padding: 0 15px;
+/* ============================================
+   Order Confirmation Styling
+   ============================================ */
+
+#order-confirmation {
+    background-color: #f0f8f0;
+    border: 2px solid #4CAF50;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Style the item total */
-.menu-item .item-total {
-    font-weight: bold;
+#order-confirmation h2 {
+    text-align: center;
     color: #4CAF50;
-    font-size: 18px;
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.confirmation-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.confirmation-header p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.confirmation-customer {
+    padding: 10px 0;
+}
+
+.confirmation-customer p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.confirmation-items {
+    padding: 10px 0;
+}
+
+.confirmation-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.confirmation-item:last-child {
+    border-bottom: none;
+}
+
+.confirmation-totals {
+    padding: 10px 0;
+    text-align: right;
+}
+
+.confirmation-totals p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.confirmation-totals .grand-total {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-top: 10px;
+}
+
+.thank-you {
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin: 15px 0 5px 0;
 }
