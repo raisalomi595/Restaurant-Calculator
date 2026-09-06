@@ -4,15 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Order Calculator</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Restaurant Order Calculator</h1>
+    <h1>Restaurant Order Calculator</h1>
+
+    <!-- Menu Section -->
     <div id="menu-container"></div>
 
-    <script src="script.js"></script>
+    <!-- Order Summary Section -->
+    <div id="order-summary">
+        <h2>Order Summary</h2>
 
-    <section></section>
+        <div id="summary-content">
+            <p>No items ordered yet.</p>
+        </div>
+
+        <div id="subtotal-container">
+            <hr>
+            <p>
+                <strong>
+                    Subtotal: Rs. <span id="subtotal-display">0</span>
+                </strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Order Details Section -->
+    <div id="order-details">
+        <h2>Order Details</h2>
+
+        <!-- Order Type Selection -->
+        <div class="order-type-group">
+            <p><strong>Order Type:</strong></p>
+
+            <label>
+                <input
+                    type="radio"
+                    name="order-type"
+                    value="dine-in"
+                    checked
+                >
+                Dine In
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="order-type"
+                    value="takeaway"
+                >
+                Takeaway
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="order-type"
+                    value="delivery"
+                >
+                Delivery
+            </label>
+        </div>
+
+        <!-- Delivery Charge Display -->
+        <div id="delivery-charge-container">
+            <p>
+                <strong>
+                    Delivery Charge: Rs.
+                    <span id="delivery-charge-display">0</span>
+                </strong>
+            </p>
+        </div>
+
+        <!-- Address Field -->
+        <div id="address-container" style="display: none;">
+            <label for="address-input">
+                <strong>Delivery Address:</strong>
+            </label>
+
+            <input
+                type="text"
+                id="address-input"
+                placeholder="Enter delivery address..."
+            >
+        </div>
+
+        <!-- Grand Total -->
+        <div id="grand-total-container">
+            <hr>
+
+            <p>
+                <strong>
+                    Grand Total: Rs.
+                    <span id="grand-total-display">0</span>
+                </strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Customer Information Section -->
+    <div id="customer-info">
+        <h2>Customer Information</h2>
+
+        <div class="form-group">
+            <label for="customer-name">
+                <strong>Customer Name:</strong>
+            </label>
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Enter customer name..."
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="phone-number">
+                <strong>Phone Number:</strong>
+            </label>
+
+            <input
+                type="text"
+                id="phone-number"
+                placeholder="Enter phone number..."
+            >
+        </div>
+
+        <!-- Customer Permanent Address -->
+        <div
+            class="form-group"
+            id="customer-address-container"
+        >
+            <label for="customer-address">
+                <strong>Address:</strong>
+            </label>
+
+            <input
+                type="text"
+                id="customer-address"
+                placeholder="Enter customer address..."
+            >
+        </div>
+    </div>
+
+    <!-- Place Order Button -->
+    <div id="order-actions">
+        <button id="place-order-btn">
+            PLACE ORDER
+        </button>
+    </div>
+
+    <!-- Order Confirmation Section -->
+    <div
+        id="order-confirmation"
+        style="display: none;"
+    >
+        <h2>ORDER CONFIRMED</h2>
+
+        <div id="confirmation-content"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
