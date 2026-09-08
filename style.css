@@ -1,150 +1,507 @@
-/* ============================================
-   Customer Information Styling
-   ============================================ */
 
-#customer-info {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+   Reset & Base
+  
 
-#customer-info h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-.form-group {
-    margin: 15px 0;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ============================================
-   Place Order Button Styling
-   ============================================ */
 
-#order-actions {
+
+main {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+}
+
+header {
     text-align: center;
-    margin: 30px 0;
+    margin-bottom: 48px;
 }
 
-#place-order-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 8px;
+header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 12px;
+    font-weight: 400;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+
+
+section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+h2 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #999;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.menu-item:first-child {
+    padding-top: 0;
+}
+
+.menu-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.menu-item h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.menu-item-price {
+    font-size: 13px;
+    color: #999;
+}
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.decrease-btn,
+.increase-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    color: #555;
+    font-size: 18px;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+    line-height: 1;
 }
 
-#place-order-btn:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+.decrease-btn:hover,
+.increase-btn:hover {
+    border-color: #333;
+    color: #000;
+    background: #fafafa;
 }
 
-#place-order-btn:active {
+.decrease-btn:active,
+.increase-btn:active {
+    background: #f0f0f0;
     transform: scale(0.95);
 }
 
-/* ============================================
-   Order Confirmation Styling
-   ============================================ */
+.quantity-display {
+    font-size: 15px;
+    font-weight: 500;
+    min-width: 24px;
+    text-align: center;
+    color: #000;
+}
+
+.item-total {
+    font-size: 13px;
+    color: #888;
+    min-width: 50px;
+    text-align: right;
+}
+
+
+
+#order-summary {
+    padding: 24px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-name {
+    font-weight: 400;
+    color: #333;
+    flex: 1;
+}
+
+.summary-details {
+    color: #aaa;
+    margin: 0 16px;
+    font-size: 13px;
+}
+
+.summary-total {
+    font-weight: 500;
+    color: #333;
+}
+
+.empty-state {
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+    padding: 32px 0;
+}
+
+
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.total-row.grand {
+    padding: 16px 0 0;
+    margin-top: 8px;
+    border-top: 1px solid #e8e8e8;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+
+.order-type-group {
+    margin-bottom: 20px;
+}
+
+.field-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.radio-group {
+    display: flex;
+    gap: 8px;
+}
+
+.radio-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #888;
+    transition: all 0.2s ease;
+    background: #fff;
+    user-select: none;
+}
+
+.radio-option:hover {
+    border-color: #ccc;
+    background: #fafafa;
+}
+
+.radio-option input {
+    display: none;
+}
+
+.radio-custom {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ddd;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.radio-option input:checked ~ .radio-custom {
+    background: #000;
+    box-shadow: inset 0 0 0 2px #fff;
+}
+
+.radio-option input:checked ~ span:last-child {
+    color: #000;
+    font-weight: 500;
+}
+
+.radio-option:has(input:checked) {
+    border-color: #000;
+    background: #000;
+    color: #fff;
+}
+
+.radio-option:has(input:checked) .radio-custom {
+    background: #fff;
+    box-shadow: none;
+}
+
+.radio-option:has(input:checked) span:last-child {
+    color: #fff;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1a1a1a;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+input[type="text"]:hover {
+    border-color: #ddd;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+#address-container {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+#address-container .field-label {
+    margin-bottom: 8px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+#order-actions {
+    margin: 24px 0;
+}
+
+#place-order-btn {
+    width: 100%;
+    padding: 16px 24px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+#place-order-btn:hover {
+    background: #222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#place-order-btn:active {
+    background: #111;
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
 
 #order-confirmation {
-    background-color: #f0f8f0;
-    border: 2px solid #4CAF50;
-    padding: 25px;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 16px;
+    padding: 28px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 #order-confirmation h2 {
     text-align: center;
-    color: #4CAF50;
-    margin-top: 0;
-    font-size: 28px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
 }
 
 .confirmation-header {
-    text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .confirmation-header p {
-    margin: 5px 0;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.confirmation-header strong {
     color: #333;
 }
 
 .confirmation-customer {
-    padding: 10px 0;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .confirmation-customer p {
-    margin: 5px 0;
-    color: #333;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
 }
 
 .confirmation-items {
-    padding: 10px 0;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .confirmation-item {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 1px solid #f5f5f5;
 }
 
 .confirmation-item:last-child {
     border-bottom: none;
+    padding-bottom: 0;
+}
+
+.confirmation-item:first-child {
+    padding-top: 0;
 }
 
 .confirmation-totals {
-    padding: 10px 0;
-    text-align: right;
+    padding-top: 4px;
 }
 
 .confirmation-totals p {
-    margin: 5px 0;
-    font-size: 16px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .confirmation-totals .grand-total {
-    font-size: 24px;
-    color: #4CAF50;
-    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e8e8e8;
+    margin-bottom: 0;
 }
 
 .thank-you {
     text-align: center;
-    font-size: 20px;
-    color: #333;
-    margin: 15px 0 5px 0;
+    font-size: 14px;
+    color: #999;
+    margin-top: 24px;
+}
+
+
+@media (max-width: 480px) {
+    main {
+        padding: 32px 16px 72px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+
+    .radio-option {
+        justify-content: flex-start;
+        padding: 14px 16px;
+    }
+
+    .menu-item {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .quantity-controls {
+        width: 100%;
+        justify-content: flex-end;
+    }
 }
